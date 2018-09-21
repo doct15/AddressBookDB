@@ -6,7 +6,8 @@ bmcgehee/AddressBookDB:
     - PORT: "3306"
   PostInstall:
     - mysql -u root -p$MYSQL_ROOT --execute="create database AddressDB;" || true
-    - mysql -u root -p$MYSQL_ROOT --execute="grant all privileges on AddressDB.* to PipelinesUser by '$MYSQL_ROOT';"
+    #- mysql -u root -p$MYSQL_ROOT --execute="CREATE USER 'PipelinesUser' IDENTIFIED BY '$MYSQL_ROOT';"
+    - mysql -u root -p$MYSQL_ROOT --execute="grant all privileges on AddressDB.* to PipelinesUser identified by '$MYSQL_ROOT';"
     - echo "Looking for DB migration scripts"
     - sleep 2
     - echo "Processing any DB migration scripts"
