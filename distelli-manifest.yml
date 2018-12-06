@@ -13,3 +13,4 @@ bmcgehee/AddressBookDB:
     - echo "Processing any DB migration scripts"
     - sleep 2
     - echo "Done"
+    
